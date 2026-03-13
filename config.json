@@ -1,0 +1,6 @@
+{
+  "client_id": "YOUR_OAUTH_S2S_CLIENT_ID",
+  "client_secret": "YOUR_OAUTH_S2S_CLIENT_SECRET",
+  "org_id": "YOUR_ORG_ID@AdobeOrg"
+}
+
