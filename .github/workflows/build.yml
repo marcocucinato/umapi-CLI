@@ -3,7 +3,7 @@ name: Build Windows EXE
 on: [push]
 
 jobs:
-  build:
+  build-windows:
     runs-on: windows-latest
 
     steps:
@@ -19,7 +19,7 @@ jobs:
 
       - run: pyinstaller --onefile umapi-getusers.py
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
-          name: windows-exe
+          name: windows-exe-${{ github.ref_name }}
           path: dist/*.exe           
