@@ -1,6 +1,9 @@
 name: Build Windows EXE
 
-on: [push]
+on:
+  push:
+    tags:
+      - '*'
 
 jobs:
   build-windows:
@@ -19,7 +22,11 @@ jobs:
 
       - run: pyinstaller --onefile umapi-getusers.py
 
-      - uses: actions/upload-artifact@v6
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: windows-exe-${{ github.ref_name }}
-          path: dist/*.exe           
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          files: dist/*.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
