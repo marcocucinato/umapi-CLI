@@ -15,7 +15,7 @@ jobs:
 
       - run: pip install pyinstaller
 
-      - run: pyinstaller --onefile umpai-getusers.py
+      - run: pyinstaller --onefile umapi-getusers.py
 
       - uses: actions/upload-artifact@v4
         with:
