@@ -29,7 +29,7 @@ jobs:
 
       - name: Create ZIP package
         run: |
-          powershell Compress-Archive -Path dist\*.exe, "${{ github.workspace }}\your-file.txt" -DestinationPath dist\windows-exe-${{ github.ref_name }}.zip
+          powershell Compress-Archive -Path dist\*.exe, "${{ github.workspace }}\config.json" -DestinationPath dist\windows-exe-${{ github.ref_name }}.zip
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
